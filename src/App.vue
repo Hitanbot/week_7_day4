@@ -36,6 +36,11 @@ export default {
     this.selectedBeer = beer;
     console.log(beer)
   })
+
+  eventBus.$on('beer', (beer) => {
+  this.favouriteBeers=this.favouriteBeers.filter(item => item.name !== beer.name);
+  console.log(beer)
+})
   },
   methods:{
   addToFavourites: function(){
